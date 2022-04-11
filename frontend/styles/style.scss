@@ -1,0 +1,300 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // outline: 1px solid red;
+    font-family: 'Roboto', sans-serif;
+    color: #FFCB4F;
+    // font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: rgb(43, 43, 43);
+    position: relative;
+
+    .login-page {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        min-width: 100vw;
+        background-color: rgb(43, 43, 43);
+        z-index: 100;
+
+        .fa-xmark {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+
+            input {
+                text-align: center;
+                height: 55px;
+                font-size: 18px;
+                margin-top: 12px;
+                color: black;
+            }
+
+            button {
+                margin-top: 12px;
+                width: 260px;
+                height: 55px;
+                font-size: 18px;
+                border: 5px solid #FFCB4F;
+                background-color: transparent;
+            }
+
+            .login-btn {
+                margin-top: 40px;
+                background-color: #FFCB4F;
+                color: black;
+            }
+
+            p {
+                margin-top: 12px;
+            }
+
+            .register-form-btn {
+                margin-top: 40px;
+                background-color: #FFCB4F;
+                color: black;
+            }
+        }
+    }
+
+    .header {
+        height: 60px;
+        padding: 16px;
+        display: flex;
+        justify-content: flex-end;
+
+        .login-icon {
+            text-align: center;
+
+            i {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+
+        .intro {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 60px);
+
+            @media (min-width: 750px) {
+                flex-direction: row;
+            }
+
+            .company-logo {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                @media (min-width: 750px) {
+                    margin-bottom: 30px;
+                }
+
+                div {
+                    height: 320px;
+
+                    @media (min-width: 750px) {
+                        height: 460px;
+                    }
+
+                    img {
+                        max-width: 100%;
+                        max-height: 100%;
+                    }
+                }
+
+                h1 {
+                    margin: 10px;
+                    font-size: 36px;
+
+                    @media (min-width: 750px) {
+                        font-size: 50px;
+                    }
+
+                    span {
+                        color: #DF700A;
+                    }
+                }
+            }
+
+            .intro-buttons {
+                margin: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                button {
+                    margin-top: 12px;
+                    width: 180px;
+                    height: 45px;
+                    border: 5px solid #FFCB4F;
+                    background-color: transparent;
+                    font-size: 16px;
+
+                    @media (min-width: 750px) {
+                        margin-left: 30px;
+                        width: 220px;
+                        height: 55px;
+                        font-size: 18px;
+                    }
+                }
+
+                .share-btn {
+                    background-color: #FFCB4F;
+                    // color: #2C1010;
+                    color: black;
+                }
+            }
+        }
+
+        .books {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h2 {
+                margin-top: 40px;
+            }
+            
+            .books-list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                article {
+                    margin-top: 50px;
+                    min-width: 350px;
+                    background-color: rgb(240, 240, 240);
+                    padding: 20px;
+                    border-radius: 15px;
+                    position: relative;
+                    display: flex;
+
+                    @media (min-width: 750px) {
+                        min-width: 600px;
+                    }
+
+                                            
+                    p, i {
+                        color: black;
+                    }
+
+                    .book-cover {
+                        height: 140px;
+                        min-width: 90px;
+                        overflow: hidden;
+                        border-radius: 10px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        img {
+                            max-height: 100%;
+                        }
+                    }
+
+                    .book-info {
+
+                        p {
+                            margin-top: 5px;
+                            margin-left: 10px;
+                            font-family: 'Montserrat', sans-serif;
+                        }
+
+                        .book-title {
+                            font-weight: bold;
+                        }
+
+                        p:not(.book-title) {
+                            font-size: 12px;
+                        }
+                    }
+
+                    .book-owner {
+                        background-color: #DF700A;
+                        border-radius: 10px;
+                        width: 190px;
+                        position: absolute;
+                        padding: 10px;
+                        bottom: -20px;
+                        right: 20px;
+                        font-size: 12px;
+                        text-align: center;
+                    }
+
+                    .book-type {
+                        position: absolute;
+                        width: 50px;
+                        right: 20px;
+                        top: 20px;
+                        text-align: center;
+
+                        i {
+                            font-size: 24px;
+                        }
+                        
+                        p {
+                            font-size: 12px;
+                            margin-top: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        margin-top: 140px;
+        min-height: 120px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .company-address {
+ 
+            p {
+                font-family: 'Montserrat', sans-serif;
+            }
+        }
+    }
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.hide {
+    display: none !important;
+}
+
+button, a, i:not(.book-icon) {
+    cursor: pointer;
+}

@@ -1,0 +1,377 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: #FFCB4F;
+}
+
+body {
+  background-color: #2b2b2b;
+  position: relative;
+}
+
+body .login-page {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: #2b2b2b;
+  z-index: 100;
+}
+
+body .login-page .fa-xmark {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+}
+
+body .login-page form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+body .login-page form input {
+  text-align: center;
+  height: 55px;
+  font-size: 18px;
+  margin-top: 12px;
+  color: black;
+}
+
+body .login-page form button {
+  margin-top: 12px;
+  width: 260px;
+  height: 55px;
+  font-size: 18px;
+  border: 5px solid #FFCB4F;
+  background-color: transparent;
+}
+
+body .login-page form .login-btn {
+  margin-top: 40px;
+  background-color: #FFCB4F;
+  color: black;
+}
+
+body .login-page form p {
+  margin-top: 12px;
+}
+
+body .login-page form .register-form-btn {
+  margin-top: 40px;
+  background-color: #FFCB4F;
+  color: black;
+}
+
+body .header {
+  height: 60px;
+  padding: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+body .header .login-icon {
+  text-align: center;
+}
+
+body .header .login-icon i {
+  font-size: 24px;
+}
+
+body .header .login-icon p {
+  font-size: 12px;
+}
+
+body .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .main .intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: calc(100vh - 60px);
+}
+
+@media (min-width: 750px) {
+  body .main .intro {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+body .main .intro .company-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 750px) {
+  body .main .intro .company-logo {
+    margin-bottom: 30px;
+  }
+}
+
+body .main .intro .company-logo div {
+  height: 320px;
+}
+
+@media (min-width: 750px) {
+  body .main .intro .company-logo div {
+    height: 460px;
+  }
+}
+
+body .main .intro .company-logo div img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+body .main .intro .company-logo h1 {
+  margin: 10px;
+  font-size: 36px;
+}
+
+@media (min-width: 750px) {
+  body .main .intro .company-logo h1 {
+    font-size: 50px;
+  }
+}
+
+body .main .intro .company-logo h1 span {
+  color: #DF700A;
+}
+
+body .main .intro .intro-buttons {
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .main .intro .intro-buttons button {
+  margin-top: 12px;
+  width: 180px;
+  height: 45px;
+  border: 5px solid #FFCB4F;
+  background-color: transparent;
+  font-size: 16px;
+}
+
+@media (min-width: 750px) {
+  body .main .intro .intro-buttons button {
+    margin-left: 30px;
+    width: 220px;
+    height: 55px;
+    font-size: 18px;
+  }
+}
+
+body .main .intro .intro-buttons .share-btn {
+  background-color: #FFCB4F;
+  color: black;
+}
+
+body .main .books {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .main .books h2 {
+  margin-top: 40px;
+}
+
+body .main .books .books-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .main .books .books-list article {
+  margin-top: 50px;
+  min-width: 350px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 15px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 750px) {
+  body .main .books .books-list article {
+    min-width: 600px;
+  }
+}
+
+body .main .books .books-list article p, body .main .books .books-list article i {
+  color: black;
+}
+
+body .main .books .books-list article .book-cover {
+  height: 140px;
+  min-width: 90px;
+  overflow: hidden;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .main .books .books-list article .book-cover img {
+  max-height: 100%;
+}
+
+body .main .books .books-list article .book-info p {
+  margin-top: 5px;
+  margin-left: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body .main .books .books-list article .book-info .book-title {
+  font-weight: bold;
+}
+
+body .main .books .books-list article .book-info p:not(.book-title) {
+  font-size: 12px;
+}
+
+body .main .books .books-list article .book-owner {
+  background-color: #DF700A;
+  border-radius: 10px;
+  width: 190px;
+  position: absolute;
+  padding: 10px;
+  bottom: -20px;
+  right: 20px;
+  font-size: 12px;
+  text-align: center;
+}
+
+body .main .books .books-list article .book-type {
+  position: absolute;
+  width: 50px;
+  right: 20px;
+  top: 20px;
+  text-align: center;
+}
+
+body .main .books .books-list article .book-type i {
+  font-size: 24px;
+}
+
+body .main .books .books-list article .book-type p {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+body .footer {
+  margin-top: 140px;
+  min-height: 120px;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+body .footer .company-address p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.hide {
+  display: none !important;
+}
+
+button, a, i:not(.book-icon) {
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */
