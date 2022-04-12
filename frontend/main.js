@@ -255,3 +255,53 @@ document.querySelector(".add-new-book-btn").addEventListener("click", (x) => {
     profilePage.classList.add("hide")
     addBookPage.classList.remove("hide")
 })
+
+// post new book
+
+const addNewBookForm = document.querySelector(".add-new-book-form")
+const titleInput = document.querySelector(".title-input")
+const authorInput = document.querySelector(".author-input")
+const releaseInput = document.querySelector(".release-input")
+const lengthInput = document.querySelector(".length-input")
+const audioType = document.querySelector("#audio-type")
+const writtenType = document.querySelector("#written-type")
+
+const updateLengthPlaceholder = (x) => {
+    if (x == audioType){
+        lengthInput.placeholder = "length (hours)"
+    } else {
+        lengthInput.placeholder = "length (pages)"
+    }
+}
+
+const postNewBook = async () => {
+    let coverImage = document.querySelector("#photo-input").files
+    let imageData = new FormData()
+    imageData.append("files", coverImage[0])
+    console.log(coverImage[0])
+    console.log(imageData)
+
+    await axios.post("http://localhost:1337/api/upload", imageData)
+    .then(response => {
+
+        axios.post("http://localhost:1337/api/books",{
+            data: {
+                title: titleInput.value,
+                author: authorInput.value,
+                length: lengthInput.value,
+                release_year: releaseInput.value,
+                type: audioType.checked ? audioType.value : writtenType.value,
+                cover: response.data[0].id
+            }
+        }, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`
+            }
+        })
+    })
+}
+
+addNewBookForm.addEventListener("submit", (x) => {
+    x.preventDefault()
+    postNewBook()
+})

@@ -33,7 +33,8 @@
       ]
     },
     "rating": {
-      "type": "decimal"
+      "type": "decimal",
+      "default": 3
     },
     "owner": {
       "type": "relation",

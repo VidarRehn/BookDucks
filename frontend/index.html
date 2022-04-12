@@ -60,11 +60,11 @@
             <div class="radio-buttons">
                 <div>
                     <label for="written-type">Written</label>
-                    <input type="radio" name="type" id="written-type" value="written" checked>
+                    <input onclick="updateLengthPlaceholder(this)" type="radio" name="type" id="written-type" value="written" checked>
                 </div>
                 <div>
                     <label for="audio-type">Audio</label>
-                    <input type="radio" name="type" id="audio-type" value="audio">
+                    <input onclick="updateLengthPlaceholder(this)" type="radio" name="type" id="audio-type" value="audio">
                 </div>
             </div>
             <input type="text" class="author-input" placeholder="Author">
@@ -87,14 +87,14 @@
                 </div>
             </div>
             <div class="other-info">
-                <input type="text" class="release-input" placeholder="Release year">
-                <input type="number" id="length-input" placeholder="length (pages)">
+                <input type="number" class="release-input" placeholder="Release year">
+                <input type="number" class="length-input" placeholder="length (pages)">
             </div>  
             <div class="photo-upload">
                 <label for="photo-input">Upload cover photo:</label>
                 <input type="file" name="" id="photo-input">    
             </div>   
-            <button class="add-book-btn">Add book</button>   
+            <button type="submit" class="add-book-btn">Add book</button>   
         </form>
     </div>
     <main class="main">
