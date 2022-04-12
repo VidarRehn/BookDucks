@@ -60,7 +60,7 @@ const renderBookList = (array) => {
         let newBookArticle = document.createElement("article")
         newBookArticle.innerHTML = `
         <div class="book-cover">
-            <img src="http://localhost:1337${url}">
+            <img src="http://localhost:1337${url}" alt="${title} book cover">
         </div>
         <div class="book-info">
             <p class="book-title">${title}</p>
@@ -104,6 +104,7 @@ userIcon.addEventListener("click", (x) => {
         .then(() => {
             mainContent.classList.add("hide")
             profilePage.classList.remove("hide")
+            addBookPage.classList.add("hide")
         })
 
         getData("http://localhost:1337/api/books?populate=*")
@@ -183,14 +184,14 @@ registerForm.addEventListener("submit", (x) => {
 const arrowIcon = document.querySelector(".fa-arrow-left")
 
 const renderProfile = (object) => {
-    let {username, email, createdAt} = object
+    let {id, username, email, createdAt} = object
     let dateClass = new Date(createdAt)
     let day = dateClass.getDate()
     let month = dateClass.toLocaleString('default', { month: 'long' })
     let year = dateClass.getFullYear()
     let memberSince = `${day} ${month}, ${year}`
 
-    document.querySelector(".profile-username").innerText = username
+    document.querySelector(".profile-username").innerText = username + ` (id: ${id})`
     document.querySelector(".member-since").innerText = `Member since: ${memberSince}`
     document.querySelector(".profile-email").innerText = email
     document.querySelector(".profile-email").href = `mailto:${email}`
@@ -213,7 +214,7 @@ const renderPersonalBookList = (array) => {
         let newBookArticle = document.createElement("article")
         newBookArticle.innerHTML = `
         <div class="book-cover">
-            <img src="http://localhost:1337${url}">
+            <img src="http://localhost:1337${url}" alt="${title} book cover">
         </div>
         <p class="book-title">${title}</p>
         `
@@ -237,5 +238,20 @@ const logout = () => {
 // go backwards on arrow click
 
 arrowIcon.addEventListener("click", () => {
-    location.reload();
+    if (profilePage.classList.contains("hide")){
+        addBookPage.classList.add("hide")
+        profilePage.classList.remove("hide")
+    } else {
+        location.reload();
+    }
+})
+
+
+// navigate to add book page
+
+const addBookPage = document.querySelector(".add-book-page")
+
+document.querySelector(".add-new-book-btn").addEventListener("click", (x) => {
+    profilePage.classList.add("hide")
+    addBookPage.classList.remove("hide")
 })

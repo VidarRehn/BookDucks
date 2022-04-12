@@ -53,6 +53,50 @@
         </div>
         <button class="add-new-book-btn">Add new Book</button>
     </div>
+    <div class="add-book-page hide">
+        <h2>Add book</h2>
+        <form class="add-new-book-form">
+            <input type="text" class="title-input" placeholder="Title">
+            <div class="radio-buttons">
+                <div>
+                    <label for="written-type">Written</label>
+                    <input type="radio" name="type" id="written-type" value="written" checked>
+                </div>
+                <div>
+                    <label for="audio-type">Audio</label>
+                    <input type="radio" name="type" id="audio-type" value="audio">
+                </div>
+            </div>
+            <input type="text" class="author-input" placeholder="Author">
+            <div class="checkboxes">
+                <div>
+                    <label for="">Crime</label>
+                    <input type="checkbox" id="crime-genre" value="crime">
+                </div>
+                <div>
+                    <label for="">Romance</label>
+                    <input type="checkbox" id="romance-genre" value="romance">
+                </div>
+                <div>
+                    <label for="">Drama</label>
+                    <input type="checkbox" id="drama-genre" value="drama">
+                </div>
+                <div>
+                    <label for="">Fantasy</label>
+                    <input type="checkbox" id="fantasy-genre" value="fantasy">
+                </div>
+            </div>
+            <div class="other-info">
+                <input type="text" class="release-input" placeholder="Release year">
+                <input type="number" id="length-input" placeholder="length (pages)">
+            </div>  
+            <div class="photo-upload">
+                <label for="photo-input">Upload cover photo:</label>
+                <input type="file" name="" id="photo-input">    
+            </div>   
+            <button class="add-book-btn">Add book</button>   
+        </form>
+    </div>
     <main class="main">
         <section class="intro">
             <div class="company-logo">

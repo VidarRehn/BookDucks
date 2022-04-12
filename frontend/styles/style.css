@@ -204,6 +204,117 @@ body .profile-page .add-new-book-btn {
   color: black;
 }
 
+body .add-book-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background-color: #2b2b2b;
+  z-index: 100;
+}
+
+body .add-book-page form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .add-book-page form > * {
+  margin-top: 15px;
+}
+
+body .add-book-page form input[type="text"]:not(.release-input) {
+  text-align: center;
+  width: 350px;
+  height: 40px;
+  font-size: 16px;
+  color: black;
+}
+
+body .add-book-page form .radio-buttons, body .add-book-page form .checkboxes {
+  width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+body .add-book-page form .radio-buttons > div, body .add-book-page form .checkboxes > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .add-book-page form .radio-buttons > div > *, body .add-book-page form .checkboxes > div > * {
+  margin-top: 5px;
+}
+
+body .add-book-page form .other-info {
+  width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .add-book-page form .other-info input {
+  width: 170px;
+  text-align: center;
+  height: 40px;
+  font-size: 16px;
+  color: black;
+}
+
+body .add-book-page form .photo-upload {
+  min-width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .add-book-page form button {
+  margin-top: 40px;
+  width: 220px;
+  height: 50px;
+  font-size: 16px;
+  border: 5px solid #FFCB4F;
+  background-color: #FFCB4F;
+  color: black;
+}
+
 body .header {
   height: 60px;
   padding: 16px;
