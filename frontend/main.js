@@ -101,12 +101,15 @@ userIcon.addEventListener("click", (x) => {
     if (loggedIn == false){
         toggleLoginScreen()
     } else {
-        getDataAuthorized(`http://localhost:1337/api/users/${localStorage.getItem("id")}`)
+        getDataAuthorized(`http://localhost:1337/api/users/me`)
         .then(data => {renderProfile(data)})
         .then(() => {
             mainContent.classList.add("hide")
             profilePage.classList.remove("hide")
         })
+
+        getData("http://localhost:1337/api/books?populate=*")
+        .then(data => {renderPersonalBookList(data)})
     }
 })
 
@@ -191,4 +194,26 @@ const renderProfile = (object) => {
     document.querySelector(".member-since").innerText = `Member since: ${memberSince}`
     document.querySelector(".profile-email").innerText = email
     document.querySelector(".profile-email").href = `mailto:${email}`
+}
+
+const personalBooksList = document.querySelector(".personal-books-list")
+
+const renderPersonalBookList = (array) => {
+    let personalBooks = array.filter(book => {
+        return book.attributes.owner.data.attributes.username == localStorage.getItem("user")
+    })
+
+    personalBooks.forEach(book => {
+        let {title, cover} = book.attributes
+        let {url} = cover.data.attributes
+        
+        let newBookArticle = document.createElement("article")
+        newBookArticle.innerHTML = `
+        <div class="book-cover">
+            <img src="http://localhost:1337${url}">
+        </div>
+        <p class="book-title">${title}</p>
+        `
+        personalBooksList.append(newBookArticle)
+    })
 }

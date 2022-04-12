@@ -7,10 +7,9 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: 1px solid red;
+    // outline: 1px solid red;
     font-family: 'Roboto', sans-serif;
     color: #FFCB4F;
-    // font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -94,7 +93,7 @@ body {
                 margin-top: 20px;
                 width: 220px;
                 height: 50px;
-                font-size: 18px;
+                font-size: 16px;
                 border: 5px solid #FFCB4F;
                 background-color: transparent;
             }
@@ -107,6 +106,49 @@ body {
 
         .your-books {
             margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .personal-books-list {
+                display: flex;
+
+                article {
+                    background-color: white;
+                    padding: 10px;
+                    border-radius: 10px;
+                    margin: 15px;
+
+                    .book-cover {
+                        height: 140px;
+                        min-width: 90px;
+                        overflow: hidden;
+                        border-radius: 10px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        img {
+                            max-height: 100%;
+                        }
+                    }
+
+                    .book-title {
+                        color: black;
+                        margin-top: 12px;
+                    }
+                }
+            }
+        }
+
+        .add-new-book-btn {
+            margin-top: 20px;
+            width: 220px;
+            height: 50px;
+            font-size: 16px;
+            border: 5px solid #FFCB4F;
+            background-color:#FFCB4F;
+            color: black;
         }
     }
 
