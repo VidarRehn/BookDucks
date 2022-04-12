@@ -8,7 +8,7 @@ const arrowIcon = document.querySelector(".fa-arrow-left")
 const logOutIcon = document.querySelector(".fa-right-from-bracket")
 
 const displayLoggedInUser = () => {
-    loggedInUser.innerText = localStorage.getItem("logged in user")
+    loggedInUser.innerText = localStorage.getItem("user")
     loggedInUser.classList.remove("hidden")
 }
 
@@ -25,6 +25,15 @@ const getData = async (url) => {
     let response = await axios.get(url)
     let {data} = response.data
     return data
+}
+
+const getDataAuthorized = async (url) => {
+    let response = await axios.get(url,{
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`
+        }
+    })
+    return response.data
 }
 
 getData("http://localhost:1337/api/books?populate=*")
@@ -79,6 +88,9 @@ const renderBookList = (array) => {
 
 const loginScreen = document.querySelector(".login-page")
 const userIcon = document.querySelector(".fa-user")
+const profilePage = document.querySelector(".profile-page")
+const mainContent = document.querySelector(".main")
+
 
 const toggleLoginScreen = () => {
     loginScreen.classList.toggle("hide")
@@ -89,7 +101,12 @@ userIcon.addEventListener("click", (x) => {
     if (loggedIn == false){
         toggleLoginScreen()
     } else {
-        // skicka användare till profilsida
+        getDataAuthorized(`http://localhost:1337/api/users/${localStorage.getItem("id")}`)
+        .then(data => {renderProfile(data)})
+        .then(() => {
+            mainContent.classList.add("hide")
+            profilePage.classList.remove("hide")
+        })
     }
 })
 
@@ -106,7 +123,8 @@ const login = async () => {
         identifier: loginUsernameInput.value,
         password: loginPasswordInput.value,
     })
-    localStorage.setItem("logged in user", data.user.username)
+    localStorage.setItem("user", data.user.username)
+    localStorage.setItem("id", data.user.id)
     localStorage.setItem("token", data.jwt)
 }
 
@@ -143,7 +161,8 @@ const register = async () => {
         email: registerEmailInput.value,
         password: registerPasswordInput.value
     })
-    localStorage.setItem("logged in user", data.user.username)
+    localStorage.setItem("user", data.user.username)
+    localStorage.setItem("id", data.user.id)
     localStorage.setItem("token", data.jwt)
 }
 
@@ -156,3 +175,20 @@ registerForm.addEventListener("submit", (x) => {
 
     loggedIn = true
 })
+
+
+// render logged-in user information on profile page
+
+const renderProfile = (object) => {
+    let {username, email, createdAt} = object
+    let dateClass = new Date(createdAt)
+    let day = dateClass.getDate()
+    let month = dateClass.toLocaleString('default', { month: 'long' })
+    let year = dateClass.getFullYear()
+    let memberSince = `${day} ${month}, ${year}`
+
+    document.querySelector(".profile-username").innerText = username
+    document.querySelector(".member-since").innerText = `Member since: ${memberSince}`
+    document.querySelector(".profile-email").innerText = email
+    document.querySelector(".profile-email").href = `mailto:${email}`
+}
