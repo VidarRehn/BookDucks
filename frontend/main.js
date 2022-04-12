@@ -4,8 +4,6 @@ let loggedIn = false
 // display logged in user
 
 const loggedInUser = document.querySelector(".logged-in-user")
-const arrowIcon = document.querySelector(".fa-arrow-left")
-const logOutIcon = document.querySelector(".fa-right-from-bracket")
 
 const displayLoggedInUser = () => {
     loggedInUser.innerText = localStorage.getItem("user")
@@ -182,6 +180,8 @@ registerForm.addEventListener("submit", (x) => {
 
 // render logged-in user information on profile page
 
+const arrowIcon = document.querySelector(".fa-arrow-left")
+
 const renderProfile = (object) => {
     let {username, email, createdAt} = object
     let dateClass = new Date(createdAt)
@@ -194,11 +194,14 @@ const renderProfile = (object) => {
     document.querySelector(".member-since").innerText = `Member since: ${memberSince}`
     document.querySelector(".profile-email").innerText = email
     document.querySelector(".profile-email").href = `mailto:${email}`
+
+    arrowIcon.classList.remove("hidden")
 }
 
 const personalBooksList = document.querySelector(".personal-books-list")
 
 const renderPersonalBookList = (array) => {
+    personalBooksList.innerHTML = ""
     let personalBooks = array.filter(book => {
         return book.attributes.owner.data.attributes.username == localStorage.getItem("user")
     })
@@ -217,3 +220,22 @@ const renderPersonalBookList = (array) => {
         personalBooksList.append(newBookArticle)
     })
 }
+
+
+// make logout-function
+
+const logout = () => {
+    let confirmlogout = confirm("Are you sure want to log out?")
+
+    if (confirmlogout){
+        window.localStorage.clear();
+        loggedIn = false
+        location.reload();
+    }
+}
+
+// go backwards on arrow click
+
+arrowIcon.addEventListener("click", () => {
+    location.reload();
+})

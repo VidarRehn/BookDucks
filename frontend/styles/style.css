@@ -116,7 +116,7 @@ body .profile-page .profile-info > * {
   margin-top: 12px;
 }
 
-body .profile-page .profile-info button {
+body .profile-page .profile-info .edit-profile-btn {
   margin-top: 20px;
   width: 220px;
   height: 50px;
@@ -128,6 +128,18 @@ body .profile-page .profile-info button {
 body .profile-page .profile-info p {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
+  color: white;
+}
+
+body .profile-page .profile-info a {
+  color: white;
+}
+
+body .profile-page .profile-info .logout-btn {
+  border: none;
+  font-size: 16px;
+  text-decoration: underline;
+  background-color: transparent;
 }
 
 body .profile-page .your-books {
@@ -198,17 +210,17 @@ body .header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .header i {
+  font-size: 24px;
 }
 
 body .header .login-icon {
   text-align: center;
-}
-
-body .header .login-icon i {
-  font-size: 24px;
 }
 
 body .header .login-icon p {
