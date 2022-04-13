@@ -44,17 +44,12 @@ body {
 
             button {
                 margin-top: 12px;
-                width: 260px;
-                height: 55px;
-                font-size: 18px;
-                border: 5px solid $secondaryColor;
-                background-color: transparent;
+                @include button(transparent, $secondaryColor);
             }
 
             .login-btn {
                 margin-top: 40px;
-                background-color: $secondaryColor;
-                color: black;
+                @include button($secondaryColor, black);
             }
 
             p {
@@ -63,8 +58,7 @@ body {
 
             .register-form-btn {
                 margin-top: 40px;
-                background-color: $secondaryColor;
-                color: black;
+                @include button($secondaryColor, black);
             }
         }
     }
@@ -84,21 +78,17 @@ body {
 
             .edit-profile-btn {
                 margin-top: 20px;
-                width: 220px;
-                height: 50px;
-                font-size: 16px;
-                border: 5px solid $secondaryColor;
-                background-color: transparent;
+                @include button(transparent, $secondaryColor);
             }
 
             p {
                 font-family: $secondaryFont;
                 font-weight: 300;
-                color: white;
+                color: $offWhite;
             }
 
             a {
-                color: white;
+                color: $offWhite;
             }
 
             .logout-btn {
@@ -117,7 +107,7 @@ body {
                 @include flex(row, auto, auto);
 
                 article {
-                    background-color: white;
+                    background-color: $offWhite;
                     padding: 10px;
                     border-radius: 10px;
                     margin: 15px;
@@ -144,12 +134,7 @@ body {
 
         .add-new-book-btn {
             margin-top: 20px;
-            width: 220px;
-            height: 50px;
-            font-size: 16px;
-            border: 5px solid $secondaryColor;
-            background-color: $secondaryColor;
-            color: black;
+            @include button($secondaryColor, black)
         }
     }
 
@@ -206,13 +191,8 @@ body {
             }
 
             button {
+                @include button($secondaryColor, black);
                 margin-top: 40px;
-                width: 220px;
-                height: 50px;
-                font-size: 16px;
-                border: 5px solid $secondaryColor;
-                background-color: $secondaryColor;
-                color: black;
             }
         }
     }
@@ -284,24 +264,16 @@ body {
                 margin: 20px;
 
                 button {
+                    @include button(transparent, $secondaryColor);
                     margin-top: 12px;
-                    width: 180px;
-                    height: 45px;
-                    border: 5px solid $secondaryColor;
-                    background-color: transparent;
-                    font-size: 16px;
 
                     @media (min-width: 750px) {
                         margin-left: 30px;
-                        width: 220px;
-                        height: 55px;
-                        font-size: 18px;
                     }
                 }
 
                 .share-btn {
-                    background-color: $secondaryColor;
-                    color: black;
+                    @include button($secondaryColor, black);
                 }
             }
         }
@@ -373,7 +345,6 @@ body {
                         bottom: -20px;
                         right: 20px;
                         font-size: 12px;
-                        text-align: center;
                     }
 
                     .book-type {

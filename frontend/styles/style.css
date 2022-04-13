@@ -69,15 +69,20 @@ body .login-page form input {
 
 body .login-page form button {
   margin-top: 12px;
-  width: 260px;
-  height: 55px;
-  font-size: 18px;
+  width: 220px;
+  height: 50px;
+  font-size: 16px;
   border: 5px solid #FFCB4F;
   background-color: transparent;
+  color: #FFCB4F;
 }
 
 body .login-page form .login-btn {
   margin-top: 40px;
+  width: 220px;
+  height: 50px;
+  font-size: 16px;
+  border: 5px solid #FFCB4F;
   background-color: #FFCB4F;
   color: black;
 }
@@ -88,6 +93,10 @@ body .login-page form p {
 
 body .login-page form .register-form-btn {
   margin-top: 40px;
+  width: 220px;
+  height: 50px;
+  font-size: 16px;
+  border: 5px solid #FFCB4F;
   background-color: #FFCB4F;
   color: black;
 }
@@ -138,16 +147,17 @@ body .profile-page .profile-info .edit-profile-btn {
   font-size: 16px;
   border: 5px solid #FFCB4F;
   background-color: transparent;
+  color: #FFCB4F;
 }
 
 body .profile-page .profile-info p {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
-  color: white;
+  color: #f0f0f0;
 }
 
 body .profile-page .profile-info a {
-  color: white;
+  color: #f0f0f0;
 }
 
 body .profile-page .profile-info .logout-btn {
@@ -191,7 +201,7 @@ body .profile-page .your-books .personal-books-list {
 }
 
 body .profile-page .your-books .personal-books-list article {
-  background-color: white;
+  background-color: #f0f0f0;
   padding: 10px;
   border-radius: 10px;
   margin: 15px;
@@ -363,13 +373,13 @@ body .add-book-page form .photo-upload {
 }
 
 body .add-book-page form button {
-  margin-top: 40px;
   width: 220px;
   height: 50px;
   font-size: 16px;
   border: 5px solid #FFCB4F;
   background-color: #FFCB4F;
   color: black;
+  margin-top: 40px;
 }
 
 body .header {
@@ -510,24 +520,26 @@ body .main .intro .intro-buttons {
 }
 
 body .main .intro .intro-buttons button {
-  margin-top: 12px;
-  width: 180px;
-  height: 45px;
+  width: 220px;
+  height: 50px;
+  font-size: 16px;
   border: 5px solid #FFCB4F;
   background-color: transparent;
-  font-size: 16px;
+  color: #FFCB4F;
+  margin-top: 12px;
 }
 
 @media (min-width: 750px) {
   body .main .intro .intro-buttons button {
     margin-left: 30px;
-    width: 220px;
-    height: 55px;
-    font-size: 18px;
   }
 }
 
 body .main .intro .intro-buttons .share-btn {
+  width: 220px;
+  height: 50px;
+  font-size: 16px;
+  border: 5px solid #FFCB4F;
   background-color: #FFCB4F;
   color: black;
 }
@@ -647,7 +659,6 @@ body .main .books .books-list article .book-owner {
   bottom: -20px;
   right: 20px;
   font-size: 12px;
-  text-align: center;
 }
 
 body .main .books .books-list article .book-type {
