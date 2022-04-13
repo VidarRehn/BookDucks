@@ -194,7 +194,6 @@ const renderProfile = (object) => {
     document.querySelector(".profile-username").innerText = username + ` (id: ${id})`
     document.querySelector(".member-since").innerText = `Member since: ${memberSince}`
     document.querySelector(".profile-email").innerText = email
-    document.querySelector(".profile-email").href = `mailto:${email}`
 
     arrowIcon.classList.remove("hidden")
 }
@@ -278,8 +277,11 @@ const postNewBook = async () => {
     let coverImage = document.querySelector("#photo-input").files
     let imageData = new FormData()
     imageData.append("files", coverImage[0])
-    console.log(coverImage[0])
-    console.log(imageData)
+
+    let checkedGenres = []
+    document.querySelectorAll("input[type='checkbox']:checked").forEach(genre => {
+        checkedGenres.push(genre.value)
+    })
 
     await axios.post("http://localhost:1337/api/upload", imageData)
     .then(response => {
@@ -291,7 +293,9 @@ const postNewBook = async () => {
                 length: lengthInput.value,
                 release_year: releaseInput.value,
                 type: audioType.checked ? audioType.value : writtenType.value,
-                cover: response.data[0].id
+                cover: response.data[0].id,
+                owner: localStorage.getItem("id"),
+                genres: checkedGenres
             }
         }, {
             headers: {
