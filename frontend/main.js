@@ -88,13 +88,31 @@ const loginScreen = document.querySelector(".login-page")
 const userIcon = document.querySelector(".fa-user")
 const profilePage = document.querySelector(".profile-page")
 const mainContent = document.querySelector(".main")
-
+const shareButton = document.querySelector(".share-btn")
 
 const toggleLoginScreen = () => {
     loginScreen.classList.toggle("hide")
 }
 
 userIcon.addEventListener("click", (x) => {
+
+    if (loggedIn == false){
+        toggleLoginScreen()
+    } else {
+        getDataAuthorized(`http://localhost:1337/api/users/me`)
+        .then(data => {renderProfile(data)})
+        .then(() => {
+            mainContent.classList.add("hide")
+            profilePage.classList.remove("hide")
+            addBookPage.classList.add("hide")
+        })
+
+        getData("http://localhost:1337/api/books?populate=*")
+        .then(data => {renderPersonalBookList(data)})
+    }
+})
+
+shareButton.addEventListener("click", (x) => {
 
     if (loggedIn == false){
         toggleLoginScreen()
