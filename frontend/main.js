@@ -255,6 +255,25 @@ document.querySelector(".add-new-book-btn").addEventListener("click", (x) => {
     addBookPage.classList.remove("hide")
 })
 
+// make checkbox-options for each genre
+
+const checkboxesContainer = document.querySelector(".checkboxes")
+
+getData("http://localhost:1337/api/genres")
+.then(array => {
+    array.forEach(item => {
+        let {id} = item
+        let {genre} = item.attributes
+
+        let newCheckboxOption = document.createElement("div")
+        newCheckboxOption.innerHTML = `
+        <label for="${id}">${genre}</label>
+        <input type="checkbox" value="${id}">
+        `
+        checkboxesContainer.append(newCheckboxOption)
+    })
+})
+
 // post new book
 
 const addNewBookForm = document.querySelector(".add-new-book-form")
