@@ -155,8 +155,9 @@ loginForm.addEventListener("submit", (x) => {
     login()
     .then(toggleLoginScreen)
     .then(displayLoggedInUser)
-
-    loggedIn = true
+    .then(() => {
+        loggedIn = true
+    })
 })
 
 
