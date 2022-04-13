@@ -14,7 +14,6 @@ html {
 
 body {
   background-color: #2b2b2b;
-  position: relative;
 }
 
 body .login-page {
@@ -32,8 +31,8 @@ body .login-page {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 100vh;
-  min-width: 100vw;
+  height: 100vh;
+  width: 100vw;
   background-color: #2b2b2b;
   z-index: 100;
 }
@@ -68,17 +67,7 @@ body .login-page form input {
 }
 
 body .login-page form button {
-  margin-top: 12px;
-  width: 220px;
-  height: 50px;
-  font-size: 16px;
-  border: 5px solid #FFCB4F;
-  background-color: transparent;
-  color: #FFCB4F;
-}
-
-body .login-page form .login-btn {
-  margin-top: 40px;
+  margin-top: 20px;
   width: 220px;
   height: 50px;
   font-size: 16px;
@@ -91,14 +80,18 @@ body .login-page form p {
   margin-top: 12px;
 }
 
-body .login-page form .register-form-btn {
-  margin-top: 40px;
+body .login-page form .error-msg {
+  color: #DF700A;
+}
+
+body .login-page form .register-btn {
+  margin-top: 20px;
   width: 220px;
   height: 50px;
   font-size: 16px;
   border: 5px solid #FFCB4F;
-  background-color: #FFCB4F;
-  color: black;
+  background-color: transparent;
+  color: #FFCB4F;
 }
 
 body .profile-page {
@@ -115,7 +108,7 @@ body .profile-page {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 100vh;
+  height: calc(100vh - 60px);
   background-color: #2b2b2b;
   z-index: 100;
 }
@@ -142,6 +135,7 @@ body .profile-page .profile-info > * {
 
 body .profile-page .profile-info .edit-profile-btn {
   margin-top: 20px;
+  margin-top: 20px;
   width: 220px;
   height: 50px;
   font-size: 16px;
@@ -158,6 +152,7 @@ body .profile-page .profile-info p {
 
 body .profile-page .profile-info a {
   color: #f0f0f0;
+  text-decoration: underline;
 }
 
 body .profile-page .profile-info .logout-btn {
@@ -165,10 +160,11 @@ body .profile-page .profile-info .logout-btn {
   font-size: 16px;
   text-decoration: underline;
   background-color: transparent;
+  color: #DF700A;
 }
 
 body .profile-page .your-books {
-  margin-top: 70px;
+  margin-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -201,10 +197,10 @@ body .profile-page .your-books .personal-books-list {
 }
 
 body .profile-page .your-books .personal-books-list article {
-  background-color: #f0f0f0;
-  padding: 10px;
-  border-radius: 10px;
   margin: 15px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 15px;
 }
 
 body .profile-page .your-books .personal-books-list article .book-cover {
@@ -227,16 +223,13 @@ body .profile-page .your-books .personal-books-list article .book-cover {
   border-radius: 10px;
 }
 
-body .profile-page .your-books .personal-books-list article .book-cover img {
-  max-height: 100%;
-}
-
 body .profile-page .your-books .personal-books-list article .book-title {
   color: black;
   margin-top: 12px;
 }
 
 body .profile-page .add-new-book-btn {
+  margin-top: 20px;
   margin-top: 20px;
   width: 220px;
   height: 50px;
@@ -373,6 +366,7 @@ body .add-book-page form .photo-upload {
 }
 
 body .add-book-page form button {
+  margin-top: 20px;
   width: 220px;
   height: 50px;
   font-size: 16px;
@@ -397,11 +391,7 @@ body .header {
       -ms-flex-align: auto;
           align-items: auto;
   height: 60px;
-  padding: 16px;
-}
-
-body .header i {
-  font-size: 24px;
+  padding: 20px;
 }
 
 body .header .login-icon p {
@@ -482,11 +472,6 @@ body .main .intro .company-logo div {
   }
 }
 
-body .main .intro .company-logo div img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
 body .main .intro .company-logo h1 {
   margin: 10px;
   font-size: 36px;
@@ -520,6 +505,7 @@ body .main .intro .intro-buttons {
 }
 
 body .main .intro .intro-buttons button {
+  margin-top: 20px;
   width: 220px;
   height: 50px;
   font-size: 16px;
@@ -536,6 +522,7 @@ body .main .intro .intro-buttons button {
 }
 
 body .main .intro .intro-buttons .share-btn {
+  margin-top: 20px;
   width: 220px;
   height: 50px;
   font-size: 16px;
@@ -597,13 +584,14 @@ body .main .books .books-list article {
   -webkit-box-align: auto;
       -ms-flex-align: auto;
           align-items: auto;
+  margin: 15px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 15px;
   margin-top: 50px;
   width: 80%;
   min-width: 340px;
   max-width: 700px;
-  background-color: #f0f0f0;
-  padding: 20px;
-  border-radius: 15px;
   position: relative;
 }
 
@@ -629,10 +617,6 @@ body .main .books .books-list article .book-cover {
   min-width: 90px;
   overflow: hidden;
   border-radius: 10px;
-}
-
-body .main .books .books-list article .book-cover img {
-  max-height: 100%;
 }
 
 body .main .books .books-list article .book-info p {
@@ -666,10 +650,6 @@ body .main .books .books-list article .book-type {
   width: 50px;
   right: 20px;
   top: 20px;
-}
-
-body .main .books .books-list article .book-type i {
-  font-size: 24px;
 }
 
 body .main .books .books-list article .book-type p {
@@ -709,5 +689,13 @@ body .footer .company-address p {
 
 button, a, i:not(.book-icon) {
   cursor: pointer;
+}
+
+i {
+  font-size: 24px;
+}
+
+img {
+  max-height: 100%;
 }
 /*# sourceMappingURL=style.css.map */

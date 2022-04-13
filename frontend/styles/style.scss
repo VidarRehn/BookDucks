@@ -16,13 +16,12 @@ html {
 
 body {
     background-color: $backgroundColor;
-    position: relative;
 
     .login-page {
         position: fixed;
         @include flex(row, center, center);
-        min-height: 100vh;
-        min-width: 100vw;
+        height: 100vh;
+        width: 100vw;
         background-color: $backgroundColor;
         z-index: 100;
 
@@ -43,12 +42,6 @@ body {
             }
 
             button {
-                margin-top: 12px;
-                @include button(transparent, $secondaryColor);
-            }
-
-            .login-btn {
-                margin-top: 40px;
                 @include button($secondaryColor, black);
             }
 
@@ -56,16 +49,19 @@ body {
                 margin-top: 12px;
             }
 
-            .register-form-btn {
-                margin-top: 40px;
-                @include button($secondaryColor, black);
+            .error-msg {
+                color: $thirdColor;
+            }
+
+            .register-btn {
+                @include button(transparent, $secondaryColor);
             }
         }
     }
 
     .profile-page {
         @include flex (column, auto, center);
-        min-height: 100vh;
+        height:  calc(100vh - 60px);
         background-color: $backgroundColor;
         z-index: 100;
 
@@ -89,6 +85,7 @@ body {
 
             a {
                 color: $offWhite;
+                text-decoration: underline;
             }
 
             .logout-btn {
@@ -96,21 +93,19 @@ body {
                 font-size: 16px;
                 text-decoration: underline;
                 background-color: transparent;
+                color: $thirdColor;
             }
         }
 
         .your-books {
-            margin-top: 70px;
+            margin-top: 50px;
             @include flex(column, auto, center);
 
             .personal-books-list {
                 @include flex(row, auto, auto);
 
                 article {
-                    background-color: $offWhite;
-                    padding: 10px;
-                    border-radius: 10px;
-                    margin: 15px;
+                    @include article();
 
                     .book-cover {
                         @include flex(row, center, center);
@@ -118,10 +113,6 @@ body {
                         min-width: 90px;
                         overflow: hidden;
                         border-radius: 10px;
-
-                        img {
-                            max-height: 100%;
-                        }
                     }
 
                     .book-title {
@@ -200,11 +191,7 @@ body {
     .header {
         @include flex(row, space-between, auto);
         height: 60px;
-        padding: 16px;
-
-        i {
-            font-size: 24px;
-        }
+        padding: 20px;
 
         .login-icon {
 
@@ -237,11 +224,6 @@ body {
 
                     @media (min-width: 750px) {
                         height: 460px;
-                    }
-
-                    img {
-                        max-width: 100%;
-                        max-height: 100%;
                     }
                 }
 
@@ -293,13 +275,11 @@ body {
 
                 article {
                     @include flex(row, auto, auto);
+                    @include article();
                     margin-top: 50px;
                     width: 80%;
                     min-width: 340px;
                     max-width: 700px;
-                    background-color: $offWhite;
-                    padding: 20px;
-                    border-radius: 15px;
                     position: relative;
                                             
                     p, i {
@@ -312,10 +292,6 @@ body {
                         min-width: 90px;
                         overflow: hidden;
                         border-radius: 10px;
-
-                        img {
-                            max-height: 100%;
-                        }
                     }
 
                     .book-info {
@@ -352,10 +328,6 @@ body {
                         width: 50px;
                         right: 20px;
                         top: 20px;
-
-                        i {
-                            font-size: 24px;
-                        }
                         
                         p {
                             font-size: 12px;
@@ -391,4 +363,12 @@ body {
 
 button, a, i:not(.book-icon) {
     cursor: pointer;
+}
+
+i {
+    font-size: 24px;
+}
+
+img {
+    max-height: 100%;
 }
