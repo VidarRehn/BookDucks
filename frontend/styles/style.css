@@ -133,17 +133,6 @@ body .profile-page .profile-info > * {
   margin-top: 12px;
 }
 
-body .profile-page .profile-info .edit-profile-btn {
-  margin-top: 20px;
-  margin-top: 20px;
-  width: 220px;
-  height: 50px;
-  font-size: 16px;
-  border: 5px solid #FFCB4F;
-  background-color: transparent;
-  color: #FFCB4F;
-}
-
 body .profile-page .profile-info p {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
@@ -294,8 +283,9 @@ body .add-book-page form .radio-buttons, body .add-book-page form .checkboxes {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -363,6 +353,11 @@ body .add-book-page form .photo-upload {
   -webkit-box-align: auto;
       -ms-flex-align: auto;
           align-items: auto;
+}
+
+body .add-book-page form .photo-upload label {
+  text-align: left;
+  margin-bottom: 5px;
 }
 
 body .add-book-page form button {

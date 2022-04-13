@@ -209,7 +209,7 @@ const renderProfile = (object) => {
     let year = dateClass.getFullYear()
     let memberSince = `${day} ${month}, ${year}`
 
-    document.querySelector(".profile-username").innerText = username + ` (id: ${id})`
+    document.querySelector(".profile-username").innerHTML = `<span>${username}</span> <span>(id: ${id})</span>`
     document.querySelector(".member-since").innerText = `Member since: ${memberSince}`
     document.querySelector(".profile-email").innerText = email
 
