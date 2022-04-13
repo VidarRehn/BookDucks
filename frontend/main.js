@@ -34,10 +34,10 @@ const getDataAuthorized = async (url) => {
     return response.data
 }
 
+// rendering book list on opening
+
 getData("http://localhost:1337/api/books?populate=*")
 .then(data => {renderBookList(data)})
-
-// rendering book list on opening
 
 const booksList = document.querySelector(".books-list")
 
@@ -164,7 +164,8 @@ loginForm.addEventListener("submit", (x) => {
 
 const registerForm = document.querySelector(".register-form")
 
-document.querySelector(".register-btn").addEventListener("click", () => {
+document.querySelector(".register-btn").addEventListener("click", (x) => {
+    x.preventDefault()
     loginForm.classList.add("hide")
     registerForm.classList.remove("hide")
 })
