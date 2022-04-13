@@ -331,8 +331,8 @@ const postNewBook = async () => {
                 release_year: releaseInput.value,
                 type: audioType.checked ? audioType.value : writtenType.value,
                 cover: response.data[0].id,
-                owner: localStorage.getItem("id"),
-                genres: checkedGenres
+                owner: localStorage.getItem("id"), // id på inloggad user
+                genres: checkedGenres //array med genre-id
             }
         }, {
             headers: {

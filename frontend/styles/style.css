@@ -7,8 +7,9 @@ html {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #FFCB4F;
+  text-align: center;
 }
 
 body {
@@ -21,6 +22,10 @@ body .login-page {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -47,11 +52,15 @@ body .login-page form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  text-align: center;
+  -webkit-box-pack: auto;
+      -ms-flex-pack: auto;
+          justify-content: auto;
+  -webkit-box-align: auto;
+      -ms-flex-align: auto;
+          align-items: auto;
 }
 
 body .login-page form input {
-  text-align: center;
   height: 55px;
   font-size: 18px;
   margin-top: 12px;
@@ -91,6 +100,9 @@ body .profile-page {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: auto;
+      -ms-flex-pack: auto;
+          justify-content: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -107,6 +119,9 @@ body .profile-page .profile-info {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: auto;
+      -ms-flex-pack: auto;
+          justify-content: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -126,7 +141,7 @@ body .profile-page .profile-info .edit-profile-btn {
 }
 
 body .profile-page .profile-info p {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 300;
   color: white;
 }
@@ -151,6 +166,9 @@ body .profile-page .your-books {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: auto;
+      -ms-flex-pack: auto;
+          justify-content: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -160,6 +178,16 @@ body .profile-page .your-books .personal-books-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: auto;
+      -ms-flex-pack: auto;
+          justify-content: auto;
+  -webkit-box-align: auto;
+      -ms-flex-align: auto;
+          align-items: auto;
 }
 
 body .profile-page .your-books .personal-books-list article {
@@ -170,19 +198,23 @@ body .profile-page .your-books .personal-books-list article {
 }
 
 body .profile-page .your-books .personal-books-list article .book-cover {
-  height: 140px;
-  min-width: 90px;
-  overflow: hidden;
-  border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 140px;
+  min-width: 90px;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 body .profile-page .your-books .personal-books-list article .book-cover img {
@@ -212,6 +244,9 @@ body .add-book-page {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: auto;
+      -ms-flex-pack: auto;
+          justify-content: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -228,6 +263,9 @@ body .add-book-page form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: auto;
+      -ms-flex-pack: auto;
+          justify-content: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -238,7 +276,6 @@ body .add-book-page form > * {
 }
 
 body .add-book-page form input[type="text"]:not(.release-input) {
-  text-align: center;
   width: 350px;
   height: 40px;
   font-size: 16px;
@@ -250,11 +287,15 @@ body .add-book-page form .radio-buttons, body .add-book-page form .checkboxes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -267,6 +308,9 @@ body .add-book-page form .radio-buttons > div, body .add-book-page form .checkbo
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: auto;
+      -ms-flex-pack: auto;
+          justify-content: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -281,9 +325,16 @@ body .add-book-page form .other-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: auto;
+      -ms-flex-align: auto;
+          align-items: auto;
 }
 
 body .add-book-page form .other-info input {
@@ -303,6 +354,12 @@ body .add-book-page form .photo-upload {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: auto;
+      -ms-flex-pack: auto;
+          justify-content: auto;
+  -webkit-box-align: auto;
+      -ms-flex-align: auto;
+          align-items: auto;
 }
 
 body .add-book-page form button {
@@ -316,22 +373,25 @@ body .add-book-page form button {
 }
 
 body .header {
-  height: 60px;
-  padding: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: auto;
+      -ms-flex-align: auto;
+          align-items: auto;
+  height: 60px;
+  padding: 16px;
 }
 
 body .header i {
   font-size: 24px;
-}
-
-body .header .login-icon {
-  text-align: center;
 }
 
 body .header .login-icon p {
@@ -346,6 +406,12 @@ body .main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: auto;
+      -ms-flex-pack: auto;
+          justify-content: auto;
+  -webkit-box-align: auto;
+      -ms-flex-align: auto;
+          align-items: auto;
 }
 
 body .main .intro {
@@ -356,12 +422,12 @@ body .main .intro {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: calc(100vh - 60px);
 }
 
@@ -382,6 +448,9 @@ body .main .intro .company-logo {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: auto;
+      -ms-flex-pack: auto;
+          justify-content: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -424,7 +493,6 @@ body .main .intro .company-logo h1 span {
 }
 
 body .main .intro .intro-buttons {
-  margin: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -432,9 +500,13 @@ body .main .intro .intro-buttons {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: auto;
+      -ms-flex-pack: auto;
+          justify-content: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 20px;
 }
 
 body .main .intro .intro-buttons button {
@@ -461,8 +533,6 @@ body .main .intro .intro-buttons .share-btn {
 }
 
 body .main .books {
-  margin-bottom: 140px;
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -470,9 +540,14 @@ body .main .books {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: auto;
+      -ms-flex-pack: auto;
+          justify-content: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 140px;
+  width: 100%;
 }
 
 body .main .books h2 {
@@ -480,7 +555,6 @@ body .main .books h2 {
 }
 
 body .main .books .books-list {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -488,12 +562,29 @@ body .main .books .books-list {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: auto;
+      -ms-flex-pack: auto;
+          justify-content: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
 }
 
 body .main .books .books-list article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: auto;
+      -ms-flex-pack: auto;
+          justify-content: auto;
+  -webkit-box-align: auto;
+      -ms-flex-align: auto;
+          align-items: auto;
   margin-top: 50px;
   width: 80%;
   min-width: 340px;
@@ -502,9 +593,6 @@ body .main .books .books-list article {
   padding: 20px;
   border-radius: 15px;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 body .main .books .books-list article p, body .main .books .books-list article i {
@@ -512,19 +600,23 @@ body .main .books .books-list article p, body .main .books .books-list article i
 }
 
 body .main .books .books-list article .book-cover {
-  height: 140px;
-  min-width: 90px;
-  overflow: hidden;
-  border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 140px;
+  min-width: 90px;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 body .main .books .books-list article .book-cover img {
@@ -532,9 +624,10 @@ body .main .books .books-list article .book-cover img {
 }
 
 body .main .books .books-list article .book-info p {
+  text-align: left;
   margin-top: 5px;
   margin-left: 10px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 body .main .books .books-list article .book-info .book-title {
@@ -562,7 +655,6 @@ body .main .books .books-list article .book-type {
   width: 50px;
   right: 20px;
   top: 20px;
-  text-align: center;
 }
 
 body .main .books .books-list article .book-type i {
@@ -575,22 +667,25 @@ body .main .books .books-list article .book-type p {
 }
 
 body .footer {
-  min-height: 120px;
-  background-color: black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
+  min-height: 120px;
+  background-color: black;
 }
 
 body .footer .company-address p {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .hidden {

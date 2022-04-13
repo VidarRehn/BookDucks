@@ -1,4 +1,6 @@
 
+@import "_partials.scss";
+
 html {
     scroll-behavior: smooth;
 }
@@ -7,23 +9,21 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    // outline: 1px solid red;
-    font-family: 'Roboto', sans-serif;
-    color: #FFCB4F;
+    font-family: $primaryFont;
+    color: $secondaryColor;
+    text-align: center;
 }
 
 body {
-    background-color: rgb(43, 43, 43);
+    background-color: $backgroundColor;
     position: relative;
 
     .login-page {
         position: fixed;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex(row, center, center);
         min-height: 100vh;
         min-width: 100vw;
-        background-color: rgb(43, 43, 43);
+        background-color: $backgroundColor;
         z-index: 100;
 
         .fa-xmark {
@@ -33,12 +33,9 @@ body {
         }
 
         form {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
+            @include flex(column, auto, auto);
 
             input {
-                text-align: center;
                 height: 55px;
                 font-size: 18px;
                 margin-top: 12px;
@@ -50,13 +47,13 @@ body {
                 width: 260px;
                 height: 55px;
                 font-size: 18px;
-                border: 5px solid #FFCB4F;
+                border: 5px solid $secondaryColor;
                 background-color: transparent;
             }
 
             .login-btn {
                 margin-top: 40px;
-                background-color: #FFCB4F;
+                background-color: $secondaryColor;
                 color: black;
             }
 
@@ -66,24 +63,20 @@ body {
 
             .register-form-btn {
                 margin-top: 40px;
-                background-color: #FFCB4F;
+                background-color: $secondaryColor;
                 color: black;
             }
         }
     }
 
     .profile-page {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex (column, auto, center);
         min-height: 100vh;
-        background-color: rgb(43, 43, 43);
+        background-color: $backgroundColor;
         z-index: 100;
 
         .profile-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            @include flex (column, auto, center);
 
             > * {
                 margin-top: 12px;
@@ -94,12 +87,12 @@ body {
                 width: 220px;
                 height: 50px;
                 font-size: 16px;
-                border: 5px solid #FFCB4F;
+                border: 5px solid $secondaryColor;
                 background-color: transparent;
             }
 
             p {
-                font-family: 'Montserrat', sans-serif;
+                font-family: $secondaryFont;
                 font-weight: 300;
                 color: white;
             }
@@ -118,12 +111,10 @@ body {
 
         .your-books {
             margin-top: 70px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            @include flex(column, auto, center);
 
             .personal-books-list {
-                display: flex;
+                @include flex(row, auto, auto);
 
                 article {
                     background-color: white;
@@ -132,13 +123,11 @@ body {
                     margin: 15px;
 
                     .book-cover {
+                        @include flex(row, center, center);
                         height: 140px;
                         min-width: 90px;
                         overflow: hidden;
                         border-radius: 10px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
 
                         img {
                             max-height: 100%;
@@ -158,31 +147,26 @@ body {
             width: 220px;
             height: 50px;
             font-size: 16px;
-            border: 5px solid #FFCB4F;
-            background-color:#FFCB4F;
+            border: 5px solid $secondaryColor;
+            background-color: $secondaryColor;
             color: black;
         }
     }
 
     .add-book-page {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex(column, auto, center);
         min-height: 100vh;
-        background-color: rgb(43, 43, 43);
+        background-color: $backgroundColor;
         z-index: 100;
 
         form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            @include flex(column, auto, center);
 
             > * {
                 margin-top: 15px;
             }
 
             input[type="text"]:not(.release-input) {
-                text-align: center;
                 width: 350px;
                 height: 40px;
                 font-size: 16px;
@@ -191,15 +175,11 @@ body {
 
             .radio-buttons, .checkboxes {
                 width: 350px;
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
+                @include flex(row, space-around, center);
                 flex-wrap: wrap;
 
                 > div {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
+                    @include flex(column, auto, center);
 
                     > * {
                         margin-top: 5px;
@@ -209,8 +189,7 @@ body {
 
             .other-info {
                 width: 350px;
-                display: flex;
-                justify-content: space-between;
+                @include flex(row, space-between, auto);
 
                 input {
                     width: 170px;
@@ -223,8 +202,7 @@ body {
 
             .photo-upload {
                 min-width: 350px;
-                display: flex;
-                flex-direction: column;
+                @include flex(column, auto, auto);
             }
 
             button {
@@ -232,25 +210,23 @@ body {
                 width: 220px;
                 height: 50px;
                 font-size: 16px;
-                border: 5px solid #FFCB4F;
-                background-color:#FFCB4F;
+                border: 5px solid $secondaryColor;
+                background-color: $secondaryColor;
                 color: black;
             }
         }
     }
 
     .header {
+        @include flex(row, space-between, auto);
         height: 60px;
         padding: 16px;
-        display: flex;
-        justify-content: space-between;
 
         i {
             font-size: 24px;
         }
 
         .login-icon {
-            text-align: center;
 
             p {
                 font-size: 12px;
@@ -259,14 +235,10 @@ body {
     }
 
     .main {
-        display: flex;
-        flex-direction: column;
+        @include flex(column, auto, auto);
 
         .intro {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            @include flex(column, center, center);
             height: calc(100vh - 60px);
 
             @media (min-width: 750px) {
@@ -274,9 +246,7 @@ body {
             }
 
             .company-logo {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+                @include flex(column, auto, center);
 
                 @media (min-width: 750px) {
                     margin-bottom: 30px;
@@ -304,22 +274,20 @@ body {
                     }
 
                     span {
-                        color: #DF700A;
+                        color: $thirdColor;
                     }
                 }
             }
 
             .intro-buttons {
+                @include flex(column, auto, center);
                 margin: 20px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
 
                 button {
                     margin-top: 12px;
                     width: 180px;
                     height: 45px;
-                    border: 5px solid #FFCB4F;
+                    border: 5px solid $secondaryColor;
                     background-color: transparent;
                     font-size: 16px;
 
@@ -332,53 +300,46 @@ body {
                 }
 
                 .share-btn {
-                    background-color: #FFCB4F;
-                    // color: #2C1010;
+                    background-color: $secondaryColor;
                     color: black;
                 }
             }
         }
 
         .books {
+            @include flex(column, auto, center);
             margin-bottom: 140px;
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
 
             h2 {
                 margin-top: 40px;
             }
             
             .books-list {
+                @include flex(column, auto, center);
                 width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
 
                 article {
+                    @include flex(row, auto, auto);
                     margin-top: 50px;
                     width: 80%;
                     min-width: 340px;
                     max-width: 700px;
-                    background-color: rgb(240, 240, 240);
+                    background-color: $offWhite;
                     padding: 20px;
                     border-radius: 15px;
                     position: relative;
-                    display: flex;
                                             
                     p, i {
                         color: black;
                     }
 
                     .book-cover {
+                        @include flex(row, center, center);
                         height: 140px;
                         min-width: 90px;
                         overflow: hidden;
                         border-radius: 10px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
 
                         img {
                             max-height: 100%;
@@ -388,9 +349,10 @@ body {
                     .book-info {
 
                         p {
+                            text-align: left;
                             margin-top: 5px;
                             margin-left: 10px;
-                            font-family: 'Montserrat', sans-serif;
+                            font-family: $secondaryFont;
                         }
 
                         .book-title {
@@ -403,7 +365,7 @@ body {
                     }
 
                     .book-owner {
-                        background-color: #DF700A;
+                        background-color: $thirdColor;
                         border-radius: 10px;
                         width: 190px;
                         position: absolute;
@@ -419,7 +381,6 @@ body {
                         width: 50px;
                         right: 20px;
                         top: 20px;
-                        text-align: center;
 
                         i {
                             font-size: 24px;
@@ -436,17 +397,14 @@ body {
     }
 
     .footer {
+        @include flex(row, center, center);
         min-height: 120px;
         background-color: black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
 
         .company-address {
  
             p {
-                font-family: 'Montserrat', sans-serif;
+                font-family: $secondaryFont;
             }
         }
     }

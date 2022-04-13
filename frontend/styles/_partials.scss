@@ -1,0 +1,15 @@
+
+$backgroundColor: #2b2b2b;
+$secondaryColor: #FFCB4F;
+$thirdColor: #DF700A;
+$offWhite: #f0f0f0;
+
+$primaryFont: 'Roboto', sans-serif;
+$secondaryFont: 'Montserrat', sans-serif;
+
+@mixin flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
