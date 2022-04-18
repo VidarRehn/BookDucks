@@ -174,7 +174,6 @@ document.querySelector(".register-btn").addEventListener("click", (x) => {
 const registerUsernameInput = document.querySelector(".register.username-input")
 const registerEmailInput = document.querySelector(".register.email-input")
 const registerPasswordInput = document.querySelector(".register.password-input")
-const registerConfirmPasswordInput = document.querySelector(".register.confirm-input")
 
 const register = async () => {
     let {data} = await axios.post("http://localhost:1337/api/auth/local/register",
@@ -207,7 +206,7 @@ const renderProfile = (object) => {
     let {id, username, email, createdAt} = object
     let dateClass = new Date(createdAt)
     let day = dateClass.getDate()
-    let month = dateClass.toLocaleString('default', { month: 'long' })
+    let month = dateClass.toLocaleString('default', {month: 'long'})
     let year = dateClass.getFullYear()
     let memberSince = `${day} ${month}, ${year}`
 

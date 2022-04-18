@@ -16,19 +16,16 @@
     <div class="login-page hide">
         <i class="fa-solid fa-xmark" onclick="toggleLoginScreen()"></i>
         <form class="login-form">
-            <input type="text" class="login username-input" placeholder="Username">
-            <input type="password" class="login password-input" placeholder="Password">
-            <p class="error-msg">Error message</p>
+            <input type="text" class="login username-input" placeholder="Username" required>
+            <input type="password" class="login password-input" placeholder="Password" required>
             <button type="submit" class="login-btn">Login</button>
             <p>or</p>
             <button class="register-btn">Register</button>
         </form>
         <form class="register-form hide">
-            <input type="text" class="register username-input" placeholder="Username">
-            <input type="email" class="register email-input" placeholder="E-mail address">
-            <input type="password" class="register password-input" placeholder="Password">
-            <input type="password" class="register confirm-input" placeholder="Confirm Password">
-            <p class="error-msg">Error message</p>
+            <input type="text" class="register username-input" placeholder="Username" required>
+            <input type="email" class="register email-input" placeholder="E-mail address" required>
+            <input type="password" class="register password-input" placeholder="Password" required>
             <button type="submit" class="register-form-btn">Register</button>
         </form>
     </div>
@@ -55,7 +52,7 @@
     <div class="add-book-page hide">
         <h2>Add book</h2>
         <form class="add-new-book-form">
-            <input type="text" class="title-input" placeholder="Title">
+            <input type="text" class="title-input" placeholder="Title" required>
             <div class="radio-buttons">
                 <div>
                     <label for="written-type">Written</label>
@@ -66,15 +63,15 @@
                     <input onclick="updateLengthPlaceholder(this)" type="radio" name="type" id="audio-type" value="audio">
                 </div>
             </div>
-            <input type="text" class="author-input" placeholder="Author">
+            <input type="text" class="author-input" placeholder="Author" required>
             <div class="checkboxes"></div>
             <div class="other-info">
-                <input type="number" class="release-input" placeholder="Release year">
-                <input type="number" class="length-input" placeholder="length (pages)">
+                <input type="number" class="release-input" placeholder="Release year" required>
+                <input type="number" class="length-input" placeholder="length (pages)" required>
             </div>  
             <div class="photo-upload">
                 <label for="photo-input">Upload cover photo:</label>
-                <input type="file" name="" id="photo-input">    
+                <input type="file" name="" id="photo-input" required>    
             </div>   
             <button type="submit" class="add-book-btn">Add book</button>   
         </form>
