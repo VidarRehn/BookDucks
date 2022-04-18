@@ -144,6 +144,18 @@ body {
                 color: black;
             }
 
+            .ratings {
+                align-self: flex-start;
+
+                #rating-input {
+                    color: black;
+
+                    option {
+                        color: black;
+                    }
+                }
+            }
+
             .radio-buttons, .checkboxes {
                 width: 350px;
                 @include flex(row, space-evenly, center);

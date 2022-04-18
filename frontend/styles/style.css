@@ -274,6 +274,19 @@ body .add-book-page form input[type="text"]:not(.release-input) {
   color: black;
 }
 
+body .add-book-page form .ratings {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+body .add-book-page form .ratings #rating-input {
+  color: black;
+}
+
+body .add-book-page form .ratings #rating-input option {
+  color: black;
+}
+
 body .add-book-page form .radio-buttons, body .add-book-page form .checkboxes {
   width: 350px;
   display: -webkit-box;

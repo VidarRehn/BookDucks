@@ -302,6 +302,7 @@ const releaseInput = document.querySelector(".release-input")
 const lengthInput = document.querySelector(".length-input")
 const audioType = document.querySelector("#audio-type")
 const writtenType = document.querySelector("#written-type")
+const ratingInput = document.querySelector("#rating-input")
 
 const updateLengthPlaceholder = (x) => {
     if (x == audioType){
@@ -333,7 +334,8 @@ const postNewBook = async () => {
                 type: audioType.checked ? audioType.value : writtenType.value,
                 cover: response.data[0].id,
                 owner: localStorage.getItem("id"), // id på inloggad user
-                genres: checkedGenres //array med genre-id
+                genres: checkedGenres, //array med genre-id
+                rating: ratingInput.value
             }
         }, {
             headers: {
